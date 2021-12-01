@@ -7,6 +7,6 @@ import net.minecraft.block.HoneyBlock;
 
 class ColoredHoneyBlock extends HoneyBlock {
     public function new(color:DyeColor) {
-        super(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(color).nonOpaque());
+        super(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(color).jumpVelocityMultiplier(0.5).nonOpaque());
     }
 }

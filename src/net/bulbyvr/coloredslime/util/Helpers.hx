@@ -15,17 +15,17 @@ class Helpers {
         return (block is ColoredSlimeBlock) || (block is ColoredHoneyBlock);
     }
     public static function generateSlimeBlocks() {
-        var slimeBlocks:Map<DyeColor, Block> = [];
-        for (color in Type.allEnums(DyeColor)) {
-            slimeBlocks.set(color, new ColoredSlimeBlock(color));
+        var slimeBlocks:Map<String, Block> = [];
+        for (color in ColoredSlimeMod.colors()) {
+            slimeBlocks.set(color.name(), new ColoredSlimeBlock(untyped color));
         }
         return slimeBlocks;
 
     }
 	public static function generateHoneyBlocks() {
-		var honeyBlocks:Map<DyeColor, Block> = [];
-		for (color in Type.allEnums(DyeColor)) {
-			honeyBlocks.set(color, new ColoredHoneyBlock(color));
+		var honeyBlocks:Map<String, Block> = [];
+		for (color in ColoredSlimeMod.colors()) {
+			honeyBlocks.set(color.name(), new ColoredHoneyBlock(untyped color));
 		}
 		return honeyBlocks;
 	}

@@ -7,13 +7,9 @@ using Lambda;
 class ColoredSlimeClient implements ClientModInitializer {
     public function new() { }
     public function onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlocks(
-            RenderLayer.getTranslucent(),
-            java.Lib.nativeArray(ColoredSlimeMod.SLIMES.array(), true)
-        );
-        BlockRenderLayerMap.INSTANCE.putBlocks(
-            RenderLayer.getTranslucent(),
-            java.Lib.nativeArray(ColoredSlimeMod.HONEYS.array(), true)
-        );
+        for (color in ColoredSlimeMod.colors()) {
+			BlockRenderLayerMap.INSTANCE.putBlock(ColoredSlimeMod.SLIMES[color.name()], RenderLayer.getTranslucent());
+			BlockRenderLayerMap.INSTANCE.putBlock(ColoredSlimeMod.HONEYS[color.name()], RenderLayer.getTranslucent());
+        }
     }
 }

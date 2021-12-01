@@ -16,8 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class PistonHandlerMixin {
 
     @Inject(method = "isBlockSticky", at = @At("HEAD"), cancellable = true)
-    private static void isBlockSticky(BlockState state, CallbackInfoReturnable cir) {
-        if (state.getBlock() instanceof ColoredSlimeBlock) {
+    private static void isBlockSticky(BlockState state, CallbackInfoReturnable<Boolean> cir) {
+        if (state.getBlock() instanceof ColoredSlimeBlock || state.getBlock() instanceof ColoredHoneyBlock) {
             cir.setReturnValue(true);
         }
     }
