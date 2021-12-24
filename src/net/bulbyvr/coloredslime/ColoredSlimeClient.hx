@@ -3,6 +3,7 @@ package net.bulbyvr.coloredslime;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.render.RenderLayer;
+
 using Lambda;
 class ColoredSlimeClient implements ClientModInitializer {
     public function new() { }
